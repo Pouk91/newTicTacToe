@@ -22,7 +22,7 @@ const signUpFailure = (data) => {
 
 const signInSuccess = (data) => {
   store.user = data.user
-  console.log(store.user, 'store.user')
+  // console.log(store.user, 'store.user')
   $('#messageBanner').text('Sign in successful!')
   setTimeout(function () { $('#messageBanner').text('') }, 2000)
   $('#sign-up').addClass('hide-elements')
@@ -39,24 +39,43 @@ const signInSuccess = (data) => {
 const signInFailure = (data) => {
   $('#messageBanner').text('Wrong credentials try again!')
   setTimeout(function () { $('#messageBanner').text('') }, 2000)
-  console.log(data)
+  // console.log(data)
 }
 
 const changePasswordSuccess = (data) => {
   $('#messageBanner').text('Change password successful!')
   setTimeout(function () { $('#messageBanner').text('') }, 2000)
-  console.log(data)
+  // console.log(data)
 }
 
 const changePasswordFailure = (data) => {
   $('#messageBanner').text('Wrong credentials try again!')
   setTimeout(function () { $('#messageBanner').text('') }, 2000)
-  console.log(data)
+  // console.log(data)
 }
 
 const signOutSuccess = (data) => {
   $('#messageBanner').text('Thanks for playing!')
   setTimeout(function () { $('#messageBanner').text('') }, 2000)
+  $('#c1').text('')
+  $('#c1').removeClass('avoid-clicks')
+  $('#c2').text('')
+  $('#c2').removeClass('avoid-clicks')
+  $('#c3').text('')
+  $('#c3').removeClass('avoid-clicks')
+  $('#c4').text('')
+  $('#c4').removeClass('avoid-clicks')
+  $('#c5').text('')
+  $('#c5').removeClass('avoid-clicks')
+  $('#c6').text('')
+  $('#c6').removeClass('avoid-clicks')
+  $('#c7').text('')
+  $('#c7').removeClass('avoid-clicks')
+  $('#c8').text('')
+  $('#c8').removeClass('avoid-clicks')
+  $('#c9').text('')
+  $('#c9').removeClass('avoid-clicks')
+  $('#gameBoard').removeClass('avoid-clicks')
   $('#sign-up').removeClass('hide-elements')
   $('#gameBoard').addClass('hide-elements')
   $('#sign-in').removeClass('hide-elements')
@@ -66,11 +85,12 @@ const signOutSuccess = (data) => {
 }
 
 const signOutFailure = (data) => {
-  console.eror(data)
+  // console.eror(data)
 }
 
 const newGameSuccess = (data) => {
-  console.log(data, 'this is new game data')
+  // console.log(store, 'this is new game data')
+  store.game = data.game
   $('#messageBanner').text('')
   $('#c1').text('')
   $('#c1').removeClass('avoid-clicks')
@@ -91,29 +111,31 @@ const newGameSuccess = (data) => {
   $('#c9').text('')
   $('#c9').removeClass('avoid-clicks')
   $('#gameBoard').removeClass('avoid-clicks')
+  $('#totalGamesBanner').text('')
 }
 
 const newGameFailure = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const updateGameSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const updateGameFailure = (data) => {
-  console.error(data)
+  // console.error(data)
 }
 
 const getGamesSuccess = (data) => {
   const count = data.games.length
-  console.log(count)
+  // console.log(count)
   $('#game-count').text(data.games.length)
+  // setTimeout(function () { $('#totalGamesBanner').text('') }, 2000)
   $('#totalGamesBanner').removeClass('hide-elements')
 }
 
 const getGamesFailure = (data) => {
-  console.error(data)
+  // console.error(data)
 }
 
 module.exports = {

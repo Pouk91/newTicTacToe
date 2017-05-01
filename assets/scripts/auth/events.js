@@ -10,7 +10,7 @@ const ui = require('./ui')
 const onSignUp = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log(data, 'hi')
+  // console.log(data, 'hi')
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -46,15 +46,15 @@ const onSignOut = function (event) {
 const onNewGame = function (event) {
   event.preventDefault()
   api.newGame()
-  .then('ui.newGameSuccess')
-  .catch('ui.newGameFailure')
+  .then(ui.newGameSuccess)
+  .catch(ui.newGameFailure)
 }
 
 const onGetGames = function (event) {
   event.preventDefault()
   api.getGames()
-  .then('ui.getGamesSuccess')
-  .catch('ui.getGamesFailure')
+  .then(ui.getGamesSuccess)
+  .catch(ui.getGamesFailure)
 }
 
 let currentPlayer = 'X'

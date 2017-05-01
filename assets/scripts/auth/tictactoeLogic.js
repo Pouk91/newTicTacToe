@@ -1,6 +1,6 @@
 'use strict'
 
-// const updateGame = require('./api.js').updateGame
+const updateGame = require('./api.js').updateGame
 // console.log(updateGame)
 
 let totalClicks = 0
@@ -8,7 +8,7 @@ let totalClicks = 0
 const isNoWinner = function () {
   if (totalClicks === 9 && !isWinnerX() && !isWinnerO()) {
     $('#messageBanner').text('Tie.')
-    console.log('Tie')
+    // console.log('Tie')
     $('#gameBoard').addClass('avoid-clicks')
   }
 }
@@ -64,7 +64,7 @@ const isWinnerX = function () {
   }
 
   totalClicks++
-  console.log(totalClicks)
+  // console.log(totalClicks)
   isNoWinner()
 }
 
@@ -119,7 +119,7 @@ const isWinnerO = function () {
   }
 
   totalClicks++
-  console.log(totalClicks)
+  // console.log(totalClicks)
   isNoWinner()
 }
 

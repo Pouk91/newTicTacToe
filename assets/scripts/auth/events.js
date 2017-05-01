@@ -51,7 +51,8 @@ const onNewGame = function (event) {
   .catch('ui.newGameFailure')
 }
 
-const onGetGames = function () {
+const onGetGames = function (event) {
+  event.preventDefault()
   api.getGames()
   .then('ui.getGamesSuccess')
   .catch('ui.getGamesFailure')
@@ -75,13 +76,14 @@ const cellClick = function (event) {
 
 // event handlers
 const addHandlers = () => {
-  onGetGames()
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   $('#new-game').on('submit', onNewGame)
   $('.cell').on('click', cellClick)
+  $('#get-games').on('click', onGetGames)
+  $('#totalGamesBanner').addClass('hide-elements')
   $('#gameBoard').addClass('hide-elements')
   $('#change-password').addClass('hide-elements')
   $('#sign-out').addClass('hide-elements')

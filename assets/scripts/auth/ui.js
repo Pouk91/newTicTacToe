@@ -20,7 +20,6 @@ const signUpFailure = (data) => {
   $('#messageBanner').fadeOut(2000)
 }
 
-//
 const signInSuccess = (data) => {
   store.user = data.user
   console.log(store.user, 'store.user')
@@ -93,6 +92,7 @@ const getGamesSuccess = (data) => {
   const count = data.games.length
   $('.game-stats').show()
   $('#game-count').text(count)
+  $('#totalGamesBanner').removeClass('hide-elements')
 }
 
 const getGamesFailure = (data) => {

@@ -70,6 +70,7 @@ const signOutFailure = (data) => {
 
 const newGameSuccess = (data) => {
   console.log(data, 'this is new game data')
+  $('#messageBanner').text('')
   $('#c1').text('')
   $('#c1').removeClass('avoid-clicks')
   $('#c2').text('')
@@ -89,7 +90,6 @@ const newGameSuccess = (data) => {
   $('#c9').text('')
   $('#c9').removeClass('avoid-clicks')
   $('#gameBoard').removeClass('avoid-clicks')
-  $('#messageBanner').text('')
 }
 
 const newGameFailure = (data) => {

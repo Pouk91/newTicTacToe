@@ -3,24 +3,13 @@
 // const updateGame = require('./api.js').updateGame
 // console.log(updateGame)
 
+let totalClicks = 0
+
 const isNoWinner = function () {
-  if (
-    ($('#c1').text() !== '') &&
-    ($('#c2').text() !== '') &&
-    ($('#c3').text() !== '') &&
-    ($('#c4').text() !== '') &&
-    ($('#c5').text() !== '') &&
-    ($('#c6').text() !== '') &&
-    ($('#c7').text() !== '') &&
-    ($('#c8').text() !== '') &&
-    ($('#c9').text() !== '') &&
-    (isWinnerX === false) &&
-    (isWinnerO === false)
-  ) {
-    $('#messageBanner').text('No winner! Play again!')
-    console.log('No winner! Play again!')
+  if (totalClicks === 9 && !isWinnerX() && !isWinnerO()) {
+    $('#messageBanner').text('Tie.')
+    console.log('Tie')
     $('#gameBoard').addClass('avoid-clicks')
-    return true
   }
 }
 
@@ -73,6 +62,10 @@ const isWinnerX = function () {
     $('#gameBoard').addClass('avoid-clicks')
     return true
   }
+
+  totalClicks++
+  console.log(totalClicks)
+  isNoWinner()
 }
 
 // isWinnerO checks gameBoard cells for y win combiantions and displays Player 2 Wins!
@@ -124,6 +117,10 @@ const isWinnerO = function () {
     $('#gameBoard').addClass('avoid-clicks')
     return true
   }
+
+  totalClicks++
+  console.log(totalClicks)
+  isNoWinner()
 }
 
 module.exports = {

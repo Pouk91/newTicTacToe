@@ -52,15 +52,6 @@ const onNewGame = function (event) {
 }
 
 let currentPlayer = 'X'
-let totalClicks = 0
-
-const isNoWinner = function () {
-  if (totalClicks === 9 && !tictactoeLogic.isWinnerX() && !tictactoeLogic.isWinnerO()) {
-    $('#messageBanner').text('Tie.')
-    console.log('Tie')
-    $('#gameBoard').addClass('avoid-clicks')
-  }
-}
 
 // changes X & O on game board and checks winner from tictactoeLogic
 const cellClick = function (event) {
@@ -74,9 +65,6 @@ const cellClick = function (event) {
     tictactoeLogic.isWinnerX()
     currentPlayer = 'O'
   }
-  totalClicks++
-  isNoWinner()
-  console.log(totalClicks)
 }
 
 // event handlers

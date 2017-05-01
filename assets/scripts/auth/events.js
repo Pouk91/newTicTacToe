@@ -56,8 +56,8 @@ let currentPlayer = 'X'
 const cellClick = function (event) {
   $(this).addClass('avoid-clicks') // connected as .avoid-clicks on gameboard.css to prevent X or O from replacing each other in cells
   if (currentPlayer === 'O') {
-    tictactoeLogic.isWinnerO()
     $(this).text('O')
+    tictactoeLogic.isWinnerO()
     currentPlayer = 'X'
   } else {
     $(this).text('X')

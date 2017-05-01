@@ -55,17 +55,7 @@ let currentPlayer = 'X'
 let totalClicks = 0
 
 const isNoWinner = function () {
-  if (
-    (totalClicks === 9) &&
-    ($('#c1').text() !== '') &&
-    ($('#c2').text() !== '') &&
-    ($('#c3').text() !== '') &&
-    ($('#c4').text() !== '') &&
-    ($('#c5').text() !== '') &&
-    ($('#c6').text() !== '') &&
-    ($('#c7').text() !== '') &&
-    ($('#c8').text() !== '') &&
-    ($('#c9').text() !== '')) {
+  if (totalClicks === 9 && !tictactoeLogic.isWinnerX() && !tictactoeLogic.isWinnerO()) {
     $('#messageBanner').text('Tie.')
     console.log('Tie')
     $('#gameBoard').addClass('avoid-clicks')

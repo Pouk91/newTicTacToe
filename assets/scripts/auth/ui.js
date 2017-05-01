@@ -33,6 +33,7 @@ const signInSuccess = (data) => {
   $('#game-record').removeClass('hide-elements')
   $('#game-records').removeClass('hide-elements')
   $('#get-games').removeClass('hide-elements')
+  $('#change-password').removeClass('hide-elements')
 }
 
 const signInFailure = (data) => {

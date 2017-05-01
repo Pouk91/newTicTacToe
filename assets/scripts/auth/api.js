@@ -62,7 +62,7 @@ const updateGame = (data) => {
   })
 }
 
-// const getGames = (id) => {
+// const getGames = (data) => {
 //   return $.ajax({
 //     url: config.apiOrigin + '/games',
 //     method: 'GET',

@@ -14,12 +14,9 @@ $(() => {
 require('./example')
 
 const authEvents = require('./auth/events.js')
+const gameEvents = require('./auth/tictactoeLogic.js')
 
 // On document ready
 $(() => {
   authEvents.addHandlers()
 })
-
-// const tictactoeLogic = require('./auth/tictactoeLogic.js')
-// console.log(tictactoeLogic)
-// console.log(tictactoeLogic)

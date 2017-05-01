@@ -52,7 +52,17 @@ const onNewGame = function (event) {
 }
 
 const isNoWinner = function () {
-  if (totalClicks === 9 && !tictactoeLogic.isWinnerX() && !tictactoeLogic.isWinnerO()) {
+  if (
+    (totalClicks === 9) &&
+    ($('#c1').text() !== '') &&
+    ($('#c2').text() !== '') &&
+    ($('#c3').text() !== '') &&
+    ($('#c4').text() !== '') &&
+    ($('#c5').text() !== '') &&
+    ($('#c6').text() !== '') &&
+    ($('#c7').text() !== '') &&
+    ($('#c8').text() !== '') &&
+    ($('#c9').text() !== '')) {
     $('#messageBanner').text('Tie.')
     $('#gameBoard').addClass('avoid-clicks')
   }

@@ -38,7 +38,6 @@ const signInSuccess = (data) => {
 const signInFailure = (data) => {
   $('#messageBanner').text('Wrong credentials try again!')
   $('#messageBanner').fadeOut(2000)
-  $('#messageBanner').text('')
   console.log(data)
 }
 

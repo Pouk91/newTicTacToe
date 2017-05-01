@@ -7,7 +7,7 @@ const store = require('../store.js')
 // game-record, game-records
 const signUpSuccess = (data) => {
   $('#messageBanner').text('Sign up successful!')
-  $('#messageBanner').fadeOut(2000)
+  setTimeout(function () { $('#messageBanner').text('') }, 2000)
   $('#sign-up').addClass('hide-elements')
   $('#sign-in').removeClass('hide-elements')
   $('#change-password').removeClass('hide-elements')
@@ -17,14 +17,14 @@ const signUpSuccess = (data) => {
 // On signup failure message appears for 2 seconds
 const signUpFailure = (data) => {
   $('#messageBanner').text('Wrong credentials try again.')
-  $('#messageBanner').fadeOut(2000)
+  setTimeout(function () { $('#messageBanner').text('') }, 2000)
 }
 
 const signInSuccess = (data) => {
   store.user = data.user
   console.log(store.user, 'store.user')
   $('#messageBanner').text('Sign in successful!')
-  $('#messageBanner').fadeOut(2000)
+  setTimeout(function () { $('#messageBanner').text('') }, 2000)
   $('#sign-up').addClass('hide-elements')
   $('#gameBoard').removeClass('hide-elements')
   $('#sign-in').addClass('hide-elements')
@@ -37,25 +37,25 @@ const signInSuccess = (data) => {
 
 const signInFailure = (data) => {
   $('#messageBanner').text('Wrong credentials try again!')
-  $('#messageBanner').fadeOut(2000)
+  setTimeout(function () { $('#messageBanner').text('') }, 2000)
   console.log(data)
 }
 
 const changePasswordSuccess = (data) => {
   $('#messageBanner').text('Change password successful!')
-  $('#messageBanner').fadeOut(2000)
+  setTimeout(function () { $('#messageBanner').text('') }, 2000)
   console.log(data)
 }
 
 const changePasswordFailure = (data) => {
   $('#messageBanner').text('Wrong credentials try again!')
-  $('#messageBanner').fadeOut(2000)
+  setTimeout(function () { $('#messageBanner').text('') }, 2000)
   console.log(data)
 }
 
 const signOutSuccess = (data) => {
   $('#messageBanner').text('Thanks for playing!')
-  $('#messageBanner').fadeOut(2000)
+  setTimeout(function () { $('#messageBanner').text('') }, 2000)
   $('#sign-up').removeClass('hide-elements')
   $('#gameBoard').addClass('hide-elements')
   $('#sign-in').removeClass('hide-elements')
@@ -71,8 +71,24 @@ const signOutFailure = (data) => {
 
 const newGameSuccess = (data) => {
   console.log(data, 'this is new game data')
-  $('.cell').text('')
-  $('.cell').removeClass('avoid-clicks')
+  $('#c1').text('')
+  $('#c1').removeClass('avoid-clicks')
+  $('#c2').text('')
+  $('#c2').removeClass('avoid-clicks')
+  $('#c3').text('')
+  $('#c3').removeClass('avoid-clicks')
+  $('#c4').text('')
+  $('#c4').removeClass('avoid-clicks')
+  $('#c5').text('')
+  $('#c5').removeClass('avoid-clicks')
+  $('#c6').text('')
+  $('#c6').removeClass('avoid-clicks')
+  $('#c7').text('')
+  $('#c7').removeClass('avoid-clicks')
+  $('#c8').text('')
+  $('#c8').removeClass('avoid-clicks')
+  $('#c9').text('')
+  $('#c9').removeClass('avoid-clicks')
   $('#gameBoard').removeClass('avoid-clicks')
   $('#messageBanner').text('')
 }

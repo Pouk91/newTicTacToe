@@ -57,7 +57,13 @@ const changePasswordFailure = (data) => {
 const signOutSuccess = (data) => {
   $('#signed-out').text('Thanks for playing!')
   $('#signed-out').fadeOut(2000)
-  console.log(data)
+  $('#sign-up').removeClass('hide-elements')
+  $('#gameBoard').addClass('hide-elements')
+  $('#sign-in').removeClass('hide-elements')
+  $('#sign-out').addClass('hide-elements')
+  $('#new-game').addClass('hide-elements')
+  $('#game-record').addClass('hide-elements')
+  $('#game-records').addClass('hide-elements')
 }
 
 const signOutFailure = (data) => {
@@ -65,7 +71,7 @@ const signOutFailure = (data) => {
 }
 
 const newGameSuccess = (data) => {
-  console.log(data)
+  console.log(data, 'this is new game data')
   $('.cell').text('')
   $('.cell').removeClass('avoid-clicks')
   $('#gameBoard').removeClass('avoid-clicks')
@@ -76,11 +82,12 @@ const newGameFailure = (data) => {
   console.log(data)
 }
 
-const updateGameSuccess = (id) => {
+const updateGameSuccess = (data) => {
+  console.log(data)
 }
 
-const updateGameFailure = (error) => {
-  console.error(error)
+const updateGameFailure = (data) => {
+  console.error(data)
 }
 
 const getGamesSuccess = (data) => {
@@ -89,8 +96,8 @@ const getGamesSuccess = (data) => {
   $('#game-count').text(count)
 }
 
-const getGamesFailure = (error) => {
-  console.error(error)
+const getGamesFailure = (data) => {
+  console.error(data)
 }
 
 module.exports = {

@@ -64,16 +64,8 @@ const cellClick = function (event) {
     tictactoeLogic.isWinnerX()
     currentPlayer = 'O'
   }
-  tictactoeLogic.isNoWinner()
+  tictactoeLogic.isNoWinner()``
 }
-
-// // New game click function resets gameboard and removes avoid-clicks class
-// $('#new-game').on('click', function () {
-//   $('.cell').text('')
-//   $('.cell').removeClass('avoid-clicks')
-//   $('#gameBoard').removeClass('avoid-clicks')
-//   $('#winner').text('')
-// })
 
 // event handlers
 const addHandlers = () => {

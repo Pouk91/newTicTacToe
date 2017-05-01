@@ -108,7 +108,6 @@ const isWinnerO = function () {
   }
 }
 
-
 module.exports = {
   isWinnerX,
   isWinnerO,

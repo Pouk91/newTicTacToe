@@ -51,9 +51,7 @@ const onNewGame = function (event) {
   .catch('ui.newGameFailure')
 }
 
-const onGetGames = function (event) {
-  event.preventDefault()
-  const data = getFormFields(this)
+const onGetGames = function () {
   api.getGames(data)
   .then('ui.getGamesSuccess')
   .catch('ui.getGamesFailure')

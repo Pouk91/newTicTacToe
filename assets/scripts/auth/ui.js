@@ -75,7 +75,7 @@ const newGameSuccess = (data) => {
   $('.cell').text('')
   $('.cell').removeClass('avoid-clicks')
   $('#gameBoard').removeClass('avoid-clicks')
-  $('#winner').text('')
+  $('#messageBanner').text('')
 }
 
 const newGameFailure = (data) => {

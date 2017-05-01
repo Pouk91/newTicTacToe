@@ -51,6 +51,14 @@ const onNewGame = function (event) {
   .catch('ui.newGameFailure')
 }
 
+const onGetGames = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  api.getGames(data)
+  .then('ui.getGamesSuccess')
+  .catch('ui.getGamesFailure')
+}
+
 let currentPlayer = 'X'
 
 // changes X & O on game board and checks winner from tictactoeLogic
@@ -69,6 +77,7 @@ const cellClick = function (event) {
 
 // event handlers
 const addHandlers = () => {
+  onGetGames()
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)

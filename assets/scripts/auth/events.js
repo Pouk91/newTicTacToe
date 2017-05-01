@@ -83,8 +83,8 @@ const cellClick = function (event) {
     tictactoeLogic.isWinnerX()
     currentPlayer = 'O'
   }
-  isNoWinner()
   totalClicks++
+  isNoWinner()
   console.log(totalClicks)
 }
 

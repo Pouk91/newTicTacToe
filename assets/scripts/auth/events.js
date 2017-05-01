@@ -52,7 +52,7 @@ const onNewGame = function (event) {
 }
 
 const onGetGames = function () {
-  api.getGames(data)
+  api.getGames()
   .then('ui.getGamesSuccess')
   .catch('ui.getGamesFailure')
 }

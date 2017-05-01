@@ -23,8 +23,8 @@ const signUpFailure = (data) => {
 
 //
 const signInSuccess = (data) => {
-  console.log(store.user)
   store.user = data.user
+  console.log(store.user, 'store.user')
   $('#signed-in').text('Sign in successful!')
   $('#signed-in').fadeOut(2000)
   $('#sign-up').addClass('hide-elements')

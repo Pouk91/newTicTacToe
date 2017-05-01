@@ -6,8 +6,8 @@ const store = require('../store.js')
 // Removes class hide-elements for for ids sign-up, sign-in, change-password, gameBoard,
 // game-record, game-records
 const signUpSuccess = (data) => {
-  $('#signed-up').text('Sign up successful!')
-  $('#signed-up').fadeOut(2000)
+  $('#messageBanner').text('Sign up successful!')
+  $('#messageBanner').fadeOut(2000)
   $('#sign-up').addClass('hide-elements')
   $('#sign-in').removeClass('hide-elements')
   $('#change-password').removeClass('hide-elements')
@@ -16,16 +16,16 @@ const signUpSuccess = (data) => {
 
 // On signup failure message appears for 2 seconds
 const signUpFailure = (data) => {
-  $('#signed-up').text('Wrong credentials try again.')
-  $('#signed-up').fadeOut(2000)
+  $('#messageBanner').text('Wrong credentials try again.')
+  $('#messageBanner').fadeOut(2000)
 }
 
 //
 const signInSuccess = (data) => {
   store.user = data.user
   console.log(store.user, 'store.user')
-  $('#signed-in').text('Sign in successful!')
-  $('#signed-in').fadeOut(2000)
+  $('#messageBanner').text('Sign in successful!')
+  $('#messageBanner').fadeOut(2000)
   $('#sign-up').addClass('hide-elements')
   $('#gameBoard').removeClass('hide-elements')
   $('#sign-in').addClass('hide-elements')
@@ -36,27 +36,27 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = (data) => {
-  $('#signed-in').text('Wrong credentials try again!')
-  $('#signed-in').fadeOut(2000)
-  $('signed-in').text('')
+  $('#messageBanner').text('Wrong credentials try again!')
+  $('#messageBanner').fadeOut(2000)
+  $('#messageBanner').text('')
   console.log(data)
 }
 
 const changePasswordSuccess = (data) => {
-  $('#changePW').text('Change password successful!')
-  $('#changePW').fadeOut(2000)
+  $('#messageBanner').text('Change password successful!')
+  $('#messageBanner').fadeOut(2000)
   console.log(data)
 }
 
 const changePasswordFailure = (data) => {
-  $('#changePW').text('Wrong credentials try again!')
-  $('#changePW').fadeOut(2000)
+  $('#messageBanner').text('Wrong credentials try again!')
+  $('#messageBanner').fadeOut(2000)
   console.log(data)
 }
 
 const signOutSuccess = (data) => {
-  $('#signed-out').text('Thanks for playing!')
-  $('#signed-out').fadeOut(2000)
+  $('#messageBanner').text('Thanks for playing!')
+  $('#messageBanner').fadeOut(2000)
   $('#sign-up').removeClass('hide-elements')
   $('#gameBoard').addClass('hide-elements')
   $('#sign-in').removeClass('hide-elements')

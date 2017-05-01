@@ -51,6 +51,9 @@ const onNewGame = function (event) {
   .catch('ui.newGameFailure')
 }
 
+let currentPlayer = 'X'
+let totalClicks = 0
+
 const isNoWinner = function () {
   if (
     (totalClicks === 9) &&
@@ -69,8 +72,6 @@ const isNoWinner = function () {
 }
 
 // changes X & O on game board and checks winner from tictactoeLogic
-let currentPlayer = 'X'
-let totalClicks = 0
 const cellClick = function (event) {
   $(this).addClass('avoid-clicks') // connected as .avoid-clicks on gameboard.css to prevent X or O from replacing each other in cells
   if (currentPlayer === 'O') {

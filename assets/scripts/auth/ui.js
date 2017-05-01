@@ -12,7 +12,6 @@ const signUpSuccess = (data) => {
   $('#sign-in').removeClass('hide-elements')
   $('#change-password').removeClass('hide-elements')
   $('#new-game').removeClass('hide-elements')
-  $('#gameBoard').removeClass('hide-elements')
 }
 
 // On signup failure message appears for 2 seconds

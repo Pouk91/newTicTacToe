@@ -22,7 +22,7 @@ const isNoWinner = function () {
   }
 }
 
-// isWinnerX checks gameBoard cells for X win combiantions and dispayers Player 1 win
+// isWinnerX checks gameBoard cells for X win combiantions and dispays Player 1 win
 const isWinnerX = function () {
   if (($('#c1').text() === 'X') && ($('#c2').text() === 'X') && ($('#c3').text() === 'X')) {
     $('#winner').text('Player 1 Wins!')
@@ -65,7 +65,7 @@ const isWinnerX = function () {
   }
 }
 
-// isWinnerO checks gameBoard cells for y win combiantions and dispayers Player 2 Wins!
+// isWinnerO checks gameBoard cells for y win combiantions and displays Player 2 Wins!
 const isWinnerO = function () {
   if (($('#c1').text() === 'O') && ($('#c2').text() === 'O') && ($('#c3').text() === 'O')) {
     $('#winner').text('Player 2 Wins!')

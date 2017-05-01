@@ -32,6 +32,7 @@ const signInSuccess = (data) => {
   $('#new-game').removeClass('hide-elements')
   $('#game-record').removeClass('hide-elements')
   $('#game-records').removeClass('hide-elements')
+  $('#get-games').removeClass('hide-elements')
 }
 
 const signInFailure = (data) => {
@@ -90,7 +91,7 @@ const updateGameFailure = (data) => {
 
 const getGamesSuccess = (data) => {
   const count = data.games.length
-  $('.game-stats').show()
+  console.log(count)
   $('#game-count').text(count)
   $('#totalGamesBanner').removeClass('hide-elements')
 }

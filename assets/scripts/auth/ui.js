@@ -92,7 +92,7 @@ const updateGameFailure = (data) => {
 const getGamesSuccess = (data) => {
   const count = data.games.length
   console.log(count)
-  $('#game-count').text(count)
+  $('#game-count').text(data.games.length)
   $('#totalGamesBanner').removeClass('hide-elements')
 }
 

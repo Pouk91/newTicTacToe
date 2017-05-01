@@ -61,8 +61,7 @@ const signOutSuccess = (data) => {
   $('#sign-in').removeClass('hide-elements')
   $('#sign-out').addClass('hide-elements')
   $('#new-game').addClass('hide-elements')
-  $('#game-record').addClass('hide-elements')
-  $('#game-records').addClass('hide-elements')
+  $('#get-games').addClass('hide-elements')
 }
 
 const signOutFailure = (data) => {

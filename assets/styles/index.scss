@@ -1,11 +1,10 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-
 h1 {
   text-align: center;
 }
 
-#messageBanner {
+#sign-up, #sign-in, #change-password, #sign-out, #new-game, #messageBanner {
   text-align: center;
 }
 
@@ -20,7 +19,7 @@ h1 {
   pointer-events: none;
 }
 
-.hide-elements {
+.hide-elemme {
   display: none;
 }
 

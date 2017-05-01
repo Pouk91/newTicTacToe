@@ -64,7 +64,7 @@ const cellClick = function (event) {
     tictactoeLogic.isWinnerX()
     currentPlayer = 'O'
   }
-  tictactoeLogic.isNoWinner()``
+  tictactoeLogic.isNoWinner()
 }
 
 // event handlers

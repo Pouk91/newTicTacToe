@@ -31,6 +31,7 @@ const signInSuccess = (data) => {
   $('#gameBoard').removeClass('hide-elements')
   $('#sign-in').addClass('hide-elements')
   $('#sign-out').removeClass('hide-elements')
+  $('#new-game').removeClass('hide-elements')
   $('#game-record').removeClass('hide-elements')
   $('#game-records').removeClass('hide-elements')
 }

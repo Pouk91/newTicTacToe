@@ -1,10 +1,11 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
 h1 {
   text-align: center;
 }
-#sign-up, #sign-in, #change-password, #sign-out, #new-game, #signed-up,
-#signed-in, #changePW, #signed-out {
+
+#mesasgeBanner {
   text-align: center;
 }
 

@@ -67,6 +67,7 @@ const isNoWinner = function () {
     ($('#c8').text() !== '') &&
     ($('#c9').text() !== '')) {
     $('#messageBanner').text('Tie.')
+    console.log('Tie')
     $('#gameBoard').addClass('avoid-clicks')
   }
 }

@@ -66,7 +66,10 @@ const signOutFailure = (data) => {
 
 const newGameSuccess = (data) => {
   console.log(data)
-  store.user = data.user
+  $('.cell').text('')
+  $('.cell').removeClass('avoid-clicks')
+  $('#gameBoard').removeClass('avoid-clicks')
+  $('#winner').text('')
 }
 
 const newGameFailure = (data) => {

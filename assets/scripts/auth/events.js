@@ -43,7 +43,7 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
-const newGame = function (event) {
+const onNewGame = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   api.newGame(data)
@@ -67,13 +67,21 @@ const cellClick = function (event) {
   tictactoeLogic.isNoWinner()
 }
 
+// // New game click function resets gameboard and removes avoid-clicks class
+// $('#new-game').on('click', function () {
+//   $('.cell').text('')
+//   $('.cell').removeClass('avoid-clicks')
+//   $('#gameBoard').removeClass('avoid-clicks')
+//   $('#winner').text('')
+// })
+
 // event handlers
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  $('#new-game').on('submit', newGame)
+  $('#new-game').on('submit', onNewGame)
   $('.cell').on('click', cellClick)
   $('#gameBoard').addClass('hide-elements')
   $('#change-password').addClass('hide-elements')

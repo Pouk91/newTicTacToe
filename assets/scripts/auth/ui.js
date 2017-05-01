@@ -3,16 +3,16 @@
 const store = require('../store.js')
 
 // On signup success text will appear for 2 seconds and signup input dissappear
-// Removes class hide for for ids sign-up, sign-in, change-password, gameBoard,
+// Removes class hide-elements for for ids sign-up, sign-in, change-password, gameBoard,
 // game-record, game-records
 const signUpSuccess = (data) => {
   $('#signed-up').text('Sign up successful!')
   $('#signed-up').fadeOut(2000)
-  $('#sign-up').addClass('hide')
-  $('#sign-in').removeClass('hide')
-  $('#change-password').removeClass('hide')
-  $('#new-game').removeClass('hide')
-  $('#gameBoard').removeClass('hide')
+  $('#sign-up').addClass('hide-elements')
+  $('#sign-in').removeClass('hide-elements')
+  $('#change-password').removeClass('hide-elements')
+  $('#new-game').removeClass('hide-elements')
+  $('#gameBoard').removeClass('hide-elements')
 }
 
 // On signup failure message appears for 2 seconds
@@ -27,12 +27,12 @@ const signInSuccess = (data) => {
   store.user = data.user
   $('#signed-in').text('Sign in successful!')
   $('#signed-in').fadeOut(2000)
-  $('#sign-up').addClass('hide')
-  $('#gameBoard').removeClass('hide')
-  $('#sign-in').addClass('hide')
-  $('#sign-out').removeClass('hide')
-  $('#game-record').removeClass('hide')
-  $('#game-records').removeClass('hide')
+  $('#sign-up').addClass('hide-elements')
+  $('#gameBoard').removeClass('hide-elements')
+  $('#sign-in').addClass('hide-elements')
+  $('#sign-out').removeClass('hide-elements')
+  $('#game-record').removeClass('hide-elements')
+  $('#game-records').removeClass('hide-elements')
 }
 
 const signInFailure = (data) => {

@@ -10,7 +10,7 @@ const ui = require('./ui')
 const onSignUp = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log(data, "Hi")
+  console.log(data, 'hi')
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -75,12 +75,12 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('#new-game').on('submit', newGame)
   $('.cell').on('click', cellClick)
-  $('#gameBoard').addClass('hide')
-  $('#change-password').addClass('hide')
-  $('#sign-out').addClass('hide')
-  $('#new-game').addClass('hide')
-  $('#game-record').addClass('hide')
-  $('#game-records').addClass('hide')
+  $('#gameBoard').addClass('hide-elements')
+  $('#change-password').addClass('hide-elements')
+  $('#sign-out').addClass('hide-elements')
+  $('#new-game').addClass('hide-elements')
+  $('#game-record').addClass('hide-elements')
+  $('#game-records').addClass('hide-elements')
 }
 
 module.exports = {

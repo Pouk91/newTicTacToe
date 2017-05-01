@@ -41,7 +41,7 @@ const signOut = (data) => {
   })
 }
 
-const newGame = (data) => {
+const newGame = () => {
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',

@@ -45,8 +45,7 @@ const onSignOut = function (event) {
 
 const onNewGame = function (event) {
   event.preventDefault()
-  const data = getFormFields(this)
-  api.newGame(data)
+  api.newGame()
   .then('ui.newGameSuccess')
   .catch('ui.newGameFailure')
 }

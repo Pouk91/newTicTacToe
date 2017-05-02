@@ -127,6 +127,14 @@ const updateGameFailure = (data) => {
   // console.error(data, 'hi')
 }
 
+const updateMovesSuccess = (data) => {
+  console.log(data)
+}
+
+const updateMovesFailure = (data) => {
+  console.log(data)
+}
+
 const getGamesSuccess = (data) => {
   // console.log(count)
   $('#game-count').text(data.games.length)
@@ -151,6 +159,8 @@ module.exports = {
   newGameFailure,
   updateGameSuccess,
   updateGameFailure,
+  updateMovesSuccess,
+  updateMovesFailure,
   getGamesSuccess,
   getGamesFailure
 }

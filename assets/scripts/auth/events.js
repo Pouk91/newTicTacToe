@@ -61,6 +61,15 @@ const onUpdateGame = function () {
   }
 }
 
+const onUpdateMoves = function (getIndex, getValue) {
+  store.game.cells[getIndex] = getValue
+  const data = store
+  console.log(data)
+  api.updateMoves(data) // try data.game instead of data
+  .done(ui.updateMovesSuccess)
+  .fail(ui.updateMovesFailure)
+}
+
 const onGetGames = function (event) {
   event.preventDefault()
   api.getGames()
@@ -73,6 +82,11 @@ let currentPlayer = 'X'
 // changes X & O on game board and checks winner from tictactoeLogic
 const cellClick = function (event) {
   $(this).addClass('avoid-clicks') // connected as .avoid-clicks on gameboard.css to prevent X or O from replacing each other in cells
+  let getIndex = $(this).data('position')
+  let getValue = currentPlayer
+  onUpdateMoves(getIndex, getValue)
+  // debugger
+
   if (currentPlayer === 'O') {
     $(this).text('O')
     tictactoeLogic.isWinnerO()

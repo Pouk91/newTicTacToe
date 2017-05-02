@@ -62,14 +62,22 @@ const updateGame = (data) => {
   })
 }
 
-const updateMoves = (data) => {
+const updateMoves = (getIndex, getValue) => {
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: {
+      'game': {
+        'cell': {
+          'index': getIndex,
+          'value': getValue
+        },
+        'over': false
+      }
+    }
   })
 }
 

@@ -63,10 +63,8 @@ const onUpdateGame = function () {
 }
 
 const onUpdateMoves = function (getIndex, getValue) {
-  store.game.cells[getIndex] = getValue
-  const data = store
-  // console.log(data)
-  api.updateMoves(data) // try data.game instead of data
+  // console.log(data.game)
+  api.updateMoves(getIndex, getValue) // try data.game instead of data
   .done(ui.updateMovesSuccess)
   .fail(ui.updateMovesFailure)
 }

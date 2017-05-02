@@ -26,7 +26,6 @@ const signInSuccess = (data) => {
   $('#messageBanner').text('Sign in successful!')
   setTimeout(function () { $('#messageBanner').text('') }, 2000)
   $('#sign-up').addClass('hide-elements')
-  $('#gameBoard').removeClass('hide-elements')
   $('#sign-in').addClass('hide-elements')
   $('#sign-out').removeClass('hide-elements')
   $('#new-game').removeClass('hide-elements')
@@ -34,6 +33,7 @@ const signInSuccess = (data) => {
   $('#game-records').removeClass('hide-elements')
   $('#get-games').removeClass('hide-elements')
   $('#change-password').removeClass('hide-elements')
+  // $('#newGameButton').click()
 }
 
 const signInFailure = (data) => {
@@ -110,8 +110,9 @@ const newGameSuccess = (data) => {
   $('#c8').removeClass('avoid-clicks')
   $('#c9').text('')
   $('#c9').removeClass('avoid-clicks')
+  $('#gameBoard').removeClass('hide-elements')
   $('#gameBoard').removeClass('avoid-clicks')
-  $('#totalGamesBanner').text('')
+  $('#totalGamesBanner').addClass('hide-elements')
 }
 
 const newGameFailure = (data) => {
@@ -119,15 +120,14 @@ const newGameFailure = (data) => {
 }
 
 const updateGameSuccess = (data) => {
-  // console.log(data)
+  // console.log(data, 'hi')
 }
 
 const updateGameFailure = (data) => {
-  // console.error(data)
+  // console.error(data, 'hi')
 }
 
 const getGamesSuccess = (data) => {
-  const count = data.games.length
   // console.log(count)
   $('#game-count').text(data.games.length)
   // setTimeout(function () { $('#totalGamesBanner').text('') }, 2000)

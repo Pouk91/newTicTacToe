@@ -1,5 +1,5 @@
 'use strict'
-
+const store = require('../store.js')
 const getFormFields = require(`../../../lib/get-form-fields`)
 
 const tictactoeLogic = require('./tictactoeLogic')
@@ -50,6 +50,17 @@ const onNewGame = function (event) {
   .catch(ui.newGameFailure)
 }
 
+const onUpdateGame = function () {
+  if (tictactoeLogic.isNoWinner() || tictactoeLogic.isWinnerX() || tictactoeLogic.isWinnerO()) {
+    store.game.over = true
+    const data = store
+    console.log(data, store)
+    api.updateGame(data)
+     .then(ui.updateGameSuccess)
+     .catch(ui.updateGameFailure)
+  }
+}
+
 const onGetGames = function (event) {
   event.preventDefault()
   api.getGames()
@@ -71,6 +82,9 @@ const cellClick = function (event) {
     tictactoeLogic.isWinnerX()
     currentPlayer = 'O'
   }
+
+  tictactoeLogic.totalClicks++
+  onUpdateGame()
 }
 
 // event handlers
@@ -80,8 +94,8 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   $('#new-game').on('submit', onNewGame)
-  $('.cell').on('click', cellClick)
   $('#get-games').on('click', onGetGames)
+  $('.cell').on('click', cellClick)
   $('#totalGamesBanner').addClass('hide-elements')
   $('#gameBoard').addClass('hide-elements')
   $('#change-password').addClass('hide-elements')

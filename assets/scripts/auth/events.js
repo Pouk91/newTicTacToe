@@ -52,9 +52,10 @@ const onNewGame = function (event) {
 
 const onUpdateGame = function () {
   if (tictactoeLogic.isNoWinner() || tictactoeLogic.isWinnerX() || tictactoeLogic.isWinnerO()) {
+    // console.log(store)
     store.game.over = true
     const data = store
-    console.log(data, store)
+    // console.log(data, store)
     api.updateGame(data)
      .then(ui.updateGameSuccess)
      .catch(ui.updateGameFailure)
@@ -64,7 +65,7 @@ const onUpdateGame = function () {
 const onUpdateMoves = function (getIndex, getValue) {
   store.game.cells[getIndex] = getValue
   const data = store
-  console.log(data)
+  // console.log(data)
   api.updateMoves(data) // try data.game instead of data
   .done(ui.updateMovesSuccess)
   .fail(ui.updateMovesFailure)
